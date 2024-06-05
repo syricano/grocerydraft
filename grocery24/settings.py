@@ -40,10 +40,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-syricano-grocerydraft-tzx1m9aa6zi.ws-eu114.gitpod.io',
-    'https://8000-syricano-grocerydraft-tzx1m9aa6zi.ws-eu114.gitpod.io/accounts/login',
-]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -72,7 +68,10 @@ ROOT_URLCONF = 'grocery24.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

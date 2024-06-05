@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block pagetitle %}
+    - Home
+{% endblock %}
+
+{% block homecss %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
+
+{% block baseheader %}
+        
+        <header>
+            <h1>Welcome to Grocery Draft</h1>
+        </header>
+        
+{% endblock %}
+
+{% block basecontent %}
+    <section class="hero">
+        <h2>Fresh Organic Products Delivered to Your Doorstep</h2>
+        <p>Browse our selection of fresh vegetables, fruits, and organic products.</p>
+        <a href="{% url 'shop' %}" class="btn btn-primary">Shop Now</a>
+    </section>
+    
+    <section class="featured-products">
+        <h3>Featured Products</h3>
+        <!-- Code to display featured products -->
+    </section>
+{% endblock %}
+
+{% block basejs %}
+    {{ block.super }}
+    <script src="{% static 'home/js/home.js' %}"></script>
+{% endblock %}
