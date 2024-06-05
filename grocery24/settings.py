@@ -20,7 +20,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-syricano-grocerydraft-9sgd3p1mj4r.ws-eu114.gitpod.io',
     '127.0.0.1',
-    'heroku.com',
+    'grocerydraft-18501624fa3b.herokuapp.com',
 ]
 
 
@@ -111,16 +111,19 @@ WSGI_APPLICATION = 'grocery24.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
-DATABASES = {
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
+else:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
