@@ -19,6 +19,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-syricano-grocerydraft-tzx1m9aa6zi.ws-eu114.gitpod.io',
+    '8000-syricano-grocerydraft-bofdij46n9c.ws-eu114.gitpod.io',
     '127.0.0.1',
     'heroku.com',
 ]
