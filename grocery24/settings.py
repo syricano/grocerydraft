@@ -18,11 +18,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-syricano-grocerydraft-9sgd3p1mj4r.ws-eu114.gitpod.io',
+    '8000-syricano-grocerydraft-c1kkmexjq2h.ws-eu114.gitpod.io',
     '127.0.0.1',
     'grocerydraft-18501624fa3b.herokuapp.com',
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-syricano-grocerydraft-c1kkmexjq2h.ws-eu114.gitpod.io',
+    # Add other origins if necessary
+]
 
 # Application definition
 
